@@ -1,0 +1,79 @@
+{{#section 'title'}} DoanHairStylist - Thông tin cá nhân {{/section}} {{#if showError}}
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>{{Msg}}</strong>
+</div>
+{{/if}} {{#if showSuccess}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>{{Msg}}</strong>
+</div>
+{{/if}} {{#with User}}
+<form class="form-horizontal" action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="txtUsername" class="col-sm-2 control-label">Tên đăng nhập</label>
+		<div class="col-sm-10">
+			<p class="form-control-static">{{username}}</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtFullName" class="col-sm-2 control-label">Họ tên</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="txtFullName" name="fullname" value="{{fullname}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtGender" class="col-sm-2 control-label">Giới tính</label>
+		<div class="col-sm-4" data-toggle="button">
+			{{#if gender}}
+			<label class="radio-inline">
+				<input type="radio" name="gender" value="1" checked>Nam</label>
+			<label class="radio-inline">
+				<input type="radio" name="gender" value="0">Nữ</label>
+			{{else}}
+			<label class="radio-inline">
+				<input type="radio" name="gender" value="1">Nam</label>
+			<label class="radio-inline">
+				<input type="radio" name="gender" value="0" checked>Nữ</label>
+			{{/if}}
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtPhone" class="col-sm-2 control-label">Số điện thoại</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="txtPhone" name="phone" value="{{phone}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtEmail" class="col-sm-2 control-label">Email</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="txtEmail" name="email" value="{{email}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtAddress" class="col-sm-2 control-label">Địa chỉ</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="txtAddress" name="address" value="{{address}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtNewPwd" class="col-sm-2 control-label">Mật khẩu mới</label>
+		<div class="col-sm-4">
+			<input type="password" class="form-control" id="txtNewPwd" name="newPwd" placeholder="Mật khẩu mới">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtCmpPwd" class="col-sm-2 control-label">Nhập lại</label>
+		<div class="col-sm-4">
+			<input type="password" class="form-control" id="txtCmpPwd" name="cmpPwd" placeholder="Nhập lại mật khẩu">
+		</div>
+	</div>
+
+	<div class="col-sm-offset-2 col-sm-10">
+		<button type="submit" class="btn btn-primary">
+			<span class="glyphicon glyphicon-save"></span>
+			Cập nhật
+		</button>
+	</div>
+</form>
+{{/with}}

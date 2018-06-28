@@ -1,0 +1,63 @@
+{{#section 'title'}} Dashboard - Users {{/section}} {{#if layoutVM.curUser.isAdmin}}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th class="col-md-1">username</th>
+			<th>Admin</th>
+			<th class="col-md-2">Tên</th>
+			<th>Giới</th>
+			<th>SĐT</th>
+			<th>Email</th>
+			<th>Địa chỉ</th>
+			<th class="col-md-2">Block</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each users}}
+		<tr>
+			<td>{{username}}</td>
+			{{#if isAdmin}}
+			<td>yes</td>
+			{{else}}
+			<td>no</td>
+			{{/if}}
+			<td>{{fullname}}</td>
+			{{#if gender}}
+			<td>nam</td>
+			{{else}}
+			<td>nữ</td>
+			{{/if}}
+			<td>{{phone}}</td>
+			<td>{{email}}</td>
+			<td>{{address}}</td>
+			{{#if isBlock}}
+			<td>
+				<label class="radio-inline">
+					<input type="radio" name="isBlock_{{username}}" value="true" checked>Có</label>
+				<label class="radio-inline">
+					<input type="radio" name="isBlock_{{username}}" value="false">Không</label>
+			</td>
+			{{else}}
+			<td>
+				<label class="radio-inline">
+					<input type="radio" name="isBlock_{{username}}" value="true">Có</label>
+				<label class="radio-inline">
+					<input type="radio" name="isBlock_{{username}}" value="false" checked>Không</label>
+			</td>
+			{{/if}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{!--
+<a class="btn btn-large btn-block btn-primary" href="#" role="button">
+	<span class="glyphicon glyphicon glyphicon-refresh"></span>
+	Cập nhật
+</a> --}}
+<form action="" method="POST" role="form">
+	<button type="submit" class="btn btn-large btn-block btn-primary">
+		<span class="glyphicon glyphicon-refresh"></span>
+		Cập nhật
+	</button>
+</form>
+{{/if}}

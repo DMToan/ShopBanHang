@@ -1,0 +1,246 @@
+{{#section 'title'}}
+	HOME
+{{/section}}
+{{#section 'css'}}
+	<link rel="stylesheet" type="text/css" href="/public/assets/css/slick-theme.css"></link>
+	<link rel="stylesheet" type="text/css" href="/public/assets/css/slick.css"></link>
+	<style>
+        .panel-body{
+        	background-color: #d35400;
+        }
+        .slider {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .title {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .slick-dots li button:before {
+            font-size: 20px;
+        }
+        .slider h1 {
+            background: #fff;
+            color: #3498db;
+            font-size: 36px;
+            line-height: 100px;
+            margin: 10px;
+            padding: 2%;
+            position: relative;
+            text-align: center;
+            height: 100%;
+        }
+        .slider img {
+            background: #fff;
+            color: #3498db;
+            font-size: 36px;
+            line-height: 100px;
+            margin: auto;
+            padding: 2%;
+            position: relative;
+            text-align: center;
+            height: 100%;
+        }
+
+        .buttons {
+            padding: 0 20px 20px;
+            margin: 40px auto;
+            width: 600px;
+        }
+        .button {
+            background: #3498db;
+            color: #fff;
+            display: block;
+            font-size: 16px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            width: 41%;
+        }
+        .buttons .button {
+            background: #FFF;
+            color: #3498db;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+{{/section}}
+{{#section 'js'}}
+	<script type="text/javascript" src="/public/assets/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="/public/assets/slick.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            //------------------------------
+            $(".single-item").slick({
+                dots: true
+            });
+            //------------------------------
+            $('.multiple-items').slick({
+                dots:true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            //------------------------------
+            $('.responsive').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                  {
+                      breakpoint: 1024,
+                      settings: {
+                          slidesToShow: 3,
+                          slidesToScroll: 3,
+                          infinite: true,
+                          dots: true
+                      }
+                  },
+                  {
+                      breakpoint: 600,
+                      settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 2
+                      }
+                  },
+                  {
+                      breakpoint: 480,
+                      settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                      }
+                  }
+                ]
+            });
+            //------------------------------------------------
+            $('.variable-width').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true
+            });
+            //----------------------------------------------
+            $('.adaptive-height').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+            //---------------------------------------
+            $('.center').slick({
+                dots:true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [
+                  {
+                      breakpoint: 768,
+                      settings: {
+                          arrows: false,
+                          centerMode: true,
+                          centerPadding: '40px',
+                          slidesToShow: 3
+                      }
+                  },
+                  {
+                      breakpoint: 480,
+                      settings: {
+                          arrows: false,
+                          centerMode: true,
+                          centerPadding: '40px',
+                          slidesToShow: 1
+                      }
+                  }
+                ]
+            });
+            //-------------------------------------------
+            $('.lazy').slick({
+                dots: true,
+                lazyLoad: 'ondemand',
+                slidesToShow: 3,
+                slidesToScroll: 1
+            });
+            //--------------------------------------------
+            $('.autoplay').slick({
+                dots: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+            //-----------------------------------------
+            $('.fade').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+            //----------------------------------------------
+            var slideIndex = $('.add-remove >div').length;
+            $('.add-remove').slick({
+                dots: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            $('.js-add-slide').on('click', function () {
+                slideIndex++;
+                $('.add-remove').slick('slickAdd', '<div><h1>' + slideIndex + '</h1></div>');
+            });
+
+            $('.js-remove-slide').on('click', function () {
+                $('.add-remove').slick('slickRemove', slideIndex - 1);
+                if (slideIndex !== 0) {
+                    slideIndex--;
+                }
+            });
+        });
+	</script>
+{{/section}}
+<h2>Sản phẩm mới</h2>
+<div class="slider responsive" role="toolbar">
+	<div><h1>1</h1></div>
+	<div><h1>2</h1></div>
+	<div><h1>3</h1></div>
+	<div><h1>4</h1></div>
+	<div><h1>5</h1></div>
+	<div><h1>6</h1></div>
+	<div><h1>7</h1></div>
+	<div><h1>8</h1></div>
+	<div><h1>9</h1></div>
+	<div><h1>10</h1></div>
+</div>
+<h2>sản phẩm bán chạy</h2>
+<div class="slider responsive" role="toolbar">
+	<div><h1>1</h1></div>
+	<div><h1>2</h1></div>
+	<div><h1>3</h1></div>
+	<div><h1>4</h1></div>
+	<div><h1>5</h1></div>
+	<div><h1>6</h1></div>
+	<div><h1>7</h1></div>
+	<div><h1>8</h1></div>
+	<div><h1>9</h1></div>
+	<div><h1>10</h1></div>
+</div>
+<h2>sản phẩm xem nhiều</h2>
+<div class="slider responsive" role="toolbar">
+	<div><h1>1</h1></div>
+	<div><h1>2</h1></div>
+	<div><h1>3</h1></div>
+	<div><h1>4</h1></div>
+	<div><h1>5</h1></div>
+	<div><h1>6</h1></div>
+	<div><h1>7</h1></div>
+	<div><h1>8</h1></div>
+	<div><h1>9</h1></div>
+	<div><h1>10</h1></div>
+</div>
+<br>
+<br>

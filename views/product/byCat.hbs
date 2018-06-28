@@ -1,0 +1,54 @@
+{{#section 'title'}} DoanHairStylist - Sản phẩm {{/section}} {{#if noProducts}}
+<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		Không có sản phẩm thoả yêu cầu.
+	</div>
+</div>
+{{else}}
+<div class="row">
+	{{#each products}}
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+			<img src="/img/product/{{catID}}/{{proID}}.jpg" alt="{{proName}}" title="{{proName}}" style="width: 330px; height: 218px">
+			<div class="caption">
+				<h4>{{proName}}</h4>
+				<h4>{{number_format proPrice}}
+					<span>&#8363;</span>
+				</h4>
+				<p style="min-height: 10px">{{{proInfo}}}</p>
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-8">
+						<a href="/product/detail/{{proID}}" class="btn btn-info float-right" role="button">
+							<span class="glyphicon glyphicon-info-sign"></span>
+							Chi tiết
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+<ul class="pagination">
+	<li class="disabled">
+		<a href="#" aria-label="Previous">
+			<span aria-hidden="true">«</span>
+		</a>
+	</li>
+	{{#each page_numbers}} {{#if isCurPage}}
+	<li class="active">
+		<a href="javascript:;">{{value}}</a>
+	</li>
+	{{else}}
+	<li>
+		<a href="?page={{value}}">{{value}}</a>
+	</li>
+	{{/if}} {{/each}}
+	<li>
+		<a href="#" aria-label="Next">
+			<span aria-hidden="true">»</span>
+		</a>
+	</li>
+</ul>
+</nav>
+{{/if}}

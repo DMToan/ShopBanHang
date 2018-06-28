@@ -1,0 +1,37 @@
+{{#section 'title'}} DoanHairStylist - Chi tiết sản phẩm {{/section}} {{#with products}}
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 thumbnail">
+		<img src="/img/product/{{catID}}/{{proID}}.jpg" style="height: 460px" />
+	</div>
+	<div class="col-md-12 caption-lg-orange">
+		<h3>{{proName}}</h3>
+	</div>
+	<div class="col-md-12 padding">
+		<span class="caption-lg-red">Giá: {{number_format proPrice}}
+			<span>&#8363;</span>
+		</span>
+	</div>
+	<div class="col-md-12 padding">
+		Tồn kho: {{proQuantity}}
+	</div>
+	<div class="col-md-12 padding">
+		{{{proDetail}}}
+	</div>
+</div>
+{{/with}} {{#if layoutVM.isLogged}}
+<form class="form-horizontal" id="frmAddItem" method="post" action="/cart/add">
+	<div class="form-group">
+		<div class="col-sm-4">
+			<div class="input-group" style="margin-left: 24px;">
+				<input name="proId" type="hidden" value="{{products.ProID}}">
+				<input id="txtQ" name="quantity" type="text" class="form-control" placeholder="Slg" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="submit">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</form>
+{{/if}}
