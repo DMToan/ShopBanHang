@@ -7,7 +7,7 @@ var wnumb = require('wnumb');
 
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
-/*
+
 var handleLayoutMDW = require('./middle-wares/handleLayout'),
     handle404MDW = require('./middle-wares/handle404'),
     restrict = require('./middle-wares/restrict');
@@ -17,7 +17,7 @@ var homeController = require('./controllers/homeController'),
     productController = require('./controllers/productController'),
     accountController = require('./controllers/accountController'),
     cartController = require('./controllers/cartController');
-*/
+
 var app = express();
 
 app.engine('hbs', exphbs({
@@ -69,15 +69,15 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-/*
+
 app.use(handleLayoutMDW);
-*/
-/*
+
+
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
-*/
-/*
+
+
 app.use('/home', homeController);
 app.use('/category', categoryController);
 app.use('/product', productController);
@@ -85,7 +85,7 @@ app.use('/account', accountController);
 app.use('/cart', restrict, cartController);
 
 app.use(handle404MDW);
-*/
+
 app.listen(3000, () => {
     console.log('Site running on port 3000');
 });

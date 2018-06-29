@@ -1,0 +1,31 @@
+{{#section 'title'}} Dashboard - Categoriess {{/section}} {{#if layoutVM.curUser.isAdmin}}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th class="col-md-1">ID</th>
+			<th>Tên sản phẩm/Dịch vụ</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each categories}}
+		<tr>
+			<td>{{catID}}</td>
+			<td>{{catName}}</td>
+			<td class="text-right">
+				<a class="btn btn-danger btn-xs" href="/category/delete?id={{catID}}" role="button">
+					<span class="glyphicon glyphicon-remove"></span>
+				</a>
+				<a class="btn btn-primary btn-xs" href="/category/edit?id={{catID}}" role="button">
+					<span class="glyphicon glyphicon-wrench"></span>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+<a class="btn btn-large btn-block btn-primary" href="/category/add" role="button">
+	<span class="glyphicon glyphicon-plus"></span>
+	Thêm danh mục
+</a>
+{{/if}}

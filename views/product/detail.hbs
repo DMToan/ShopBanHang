@@ -1,29 +1,52 @@
-{{#section 'title'}} DoanHairStylist - Chi tiết sản phẩm {{/section}} {{#with products}}
+{{#section 'title'}} Chi tiết sản phẩm {{/section}} {{#with products}}
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 thumbnail">
-		<img src="/img/product/{{catID}}/{{proID}}.jpg" style="height: 460px" />
+		<img src="/img/product/{{catID}}/{{pro_id}}.jpg" style="height: 460px" />
 	</div>
 	<div class="col-md-12 caption-lg-orange">
-		<h3>{{proName}}</h3>
+		<h3>{{pro_name}}</h3>
 	</div>
 	<div class="col-md-12 padding">
-		<span class="caption-lg-red">Giá: {{number_format proPrice}}
+		<span class="caption-lg-red">Giá: {{number_format pro_cost}}
 			<span>&#8363;</span>
 		</span>
 	</div>
+	
 	<div class="col-md-12 padding">
-		Tồn kho: {{proQuantity}}
+		Màn hình: {{{ManHinh}}}
 	</div>
 	<div class="col-md-12 padding">
-		{{{proDetail}}}
+		Hệ điều hành: {{{HDH}}}
 	</div>
+	<div class="col-md-12 padding">
+		Camera trước: {{{Cam_tr}}}
+	</div>
+	<div class="col-md-12 padding">
+		Camera sau: {{{Cam_s}}}
+	</div>
+	<div class="col-md-12 padding">
+		CPU: {{{CPU}}}
+	</div>
+	<div class="col-md-12 padding">
+		RAM: {{{Ram}}}
+	</div>
+	<div class="col-md-12 padding">
+		bộ nhớ trong: {{{Memory}}}
+	</div>
+	<div class="col-md-12 padding">
+		Sim-Thẻ nhớ: {{{Sim}}}
+	</div>
+	<div class="col-md-12 padding">
+		Pin: {{{Pin}}}
+	</div>
+
 </div>
 {{/with}} {{#if layoutVM.isLogged}}
 <form class="form-horizontal" id="frmAddItem" method="post" action="/cart/add">
 	<div class="form-group">
 		<div class="col-sm-4">
 			<div class="input-group" style="margin-left: 24px;">
-				<input name="proId" type="hidden" value="{{products.ProID}}">
+				<input name="proId" type="hidden" value="{{products.Pro_id}}">
 				<input id="txtQ" name="quantity" type="text" class="form-control" placeholder="Slg" value="1">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit">

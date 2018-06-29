@@ -1,4 +1,4 @@
-{{#section 'title'}} DoanHairStylist - Sản phẩm {{/section}} {{#if noProducts}}
+{{#section 'title'}} Sản phẩm {{/section}} {{#if noProducts}}
 <div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">
 		Không có sản phẩm thoả yêu cầu.
@@ -9,16 +9,15 @@
 	{{#each products}}
 	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
-			<img src="/img/product/{{catID}}/{{proID}}.jpg" alt="{{proName}}" title="{{proName}}" style="width: 330px; height: 218px">
+			<img src="/img/product/{{catID}}/{{pro_id}}.jpg" alt="{{pro_name}}" title="{{pro_name}}" style="width: 330px; height: 218px">
 			<div class="caption">
-				<h4>{{proName}}</h4>
-				<h4>{{number_format proPrice}}
+				<h4>{{pro_name}}</h4>
+				<h4>{{number_format pro_cost}}
 					<span>&#8363;</span>
 				</h4>
-				<p style="min-height: 10px">{{{proInfo}}}</p>
 				<div class="row">
 					<div class="col-sm-2 col-sm-offset-8">
-						<a href="/product/detail/{{proID}}" class="btn btn-info float-right" role="button">
+						<a href="/product/detail/{{pro_id}}" class="btn btn-info float-right" role="button">
 							<span class="glyphicon glyphicon-info-sign"></span>
 							Chi tiết
 						</a>

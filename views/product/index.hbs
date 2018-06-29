@@ -6,7 +6,6 @@
 			<th>Tên</th>
 			<th>Loại</th>
 			<th>Hiệu</th>
-			<th>Tóm tắt</th>
 			<th>Chi tiết</th>
 			<th>Giá</th>
 			<th>Còn</th>
@@ -16,19 +15,18 @@
 	<tbody>
 		{{#each products}}
 		<tr>
-			<td>{{proID}}</td>
-			<td>{{proName}}</td>
+			<td>{{pro_id}}</td>
+			<td>{{pro_name}}</td>
 			<td>{{catID}}</td>
-			<td>{{proBrand}}</td>
-			<td>{{proInfo}}</td>
+			<td>{{bra_id}}</td>
 			<td>{{proDetail}}</td>
-			<td>{{proPrice}}</td>
+			<td>{{pro_cost}}</td>
 			<td>{{proQuantity}}</td>
 			<td class="text-right">
-				<a class="btn btn-danger btn-xs" href="/product/delete?id={{proID}}" role="button">
+				<a class="btn btn-danger btn-xs" href="/product/delete?id={{pro_id}}" role="button">
 					<span class="glyphicon glyphicon-remove"></span>
 				</a>
-				<a class="btn btn-primary btn-xs" href="/product/edit?id={{proID}}" role="button">
+				<a class="btn btn-primary btn-xs" href="/product/edit?id={{pro_id}}" role="button">
 					<span class="glyphicon glyphicon-wrench"></span>
 				</a>
 			</td>
