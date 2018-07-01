@@ -77,7 +77,7 @@ router.post('/register', (req, res) => {
         isAdmin: 0,
         isBlock: 0,
         opendate: todayString,
-        fullname: fullName,
+        fullname: req.body.fullName,
         gender: req.body.gender,
         phone: req.body.phone,
         email: req.body.email,

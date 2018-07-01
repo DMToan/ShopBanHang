@@ -25,12 +25,12 @@
 			<tbody id="list">
 				{{#each items}}
 				<tr>
-					<td>{{Product.ProID}} - {{Product.ProName}}</td>
-					<td>{{number_format Product.Price}}</td>
+					<td>{{Product.pro_id}} - {{Productpro_name}}</td>
+					<td>{{number_format Product.pro_cost}}</td>
 					<td>{{Quantity}}</td>
 					<td>{{number_format Amount}}</td>
 					<td class="text-right">
-						<a data-proid="{{Product.ProID}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
+						<a data-proid="{{Product.pro_}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
 							<span class="glyphicon glyphicon-remove"></span>
 						</a>
 					</td>

@@ -1,14 +1,19 @@
-{{#section 'title'}} DoanHairStylist - Thông tin cá nhân {{/section}} {{#if showError}}
+{{#section 'title'}} 
+	Thông tin cá nhân 
+{{/section}} 
+{{#if showError}}
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<strong>{{Msg}}</strong>
 </div>
-{{/if}} {{#if showSuccess}}
+{{/if}} 
+{{#if showSuccess}}
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<strong>{{Msg}}</strong>
 </div>
-{{/if}} {{#with User}}
+{{/if}} 
+{{#with User}}
 <form class="form-horizontal" action="" method="POST" role="form">
 	<div class="form-group">
 		<label for="txtUsername" class="col-sm-2 control-label">Tên đăng nhập</label>

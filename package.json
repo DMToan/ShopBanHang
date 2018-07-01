@@ -18,7 +18,17 @@
     "express-session": "^1.15.6",
     "moment": "^2.22.2",
     "mysql": "^2.15.0",
+    "npm": "^6.1.0",
     "path": "^0.12.7",
     "wnumb": "^1.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DMToan/ShopBanHang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DMToan/ShopBanHang/issues"
+  },
+  "homepage": "https://github.com/DMToan/ShopBanHang#readme"
 }

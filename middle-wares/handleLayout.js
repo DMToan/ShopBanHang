@@ -9,7 +9,6 @@ module.exports = (req, res, next) => {
     categoryModel.loadAll().then(rows => {
         res.locals.layoutVM = {
             categories: rows,
-            suppliers: rows,
             isLogged: req.session.isLogged,
             curUser: req.session.user
         };

@@ -2,7 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
-var path = require('path');
+const path = require('path');
 var wnumb = require('wnumb');
 
 var session = require('express-session');
@@ -13,16 +13,18 @@ var handleLayoutMDW = require('./middle-wares/handleLayout'),
     restrict = require('./middle-wares/restrict');
 
 var homeController = require('./controllers/homeController'),
-    categoryController = require('./controllers/categoryController'),
+    accountController = require('./controllers/accountController');
+/*    categoryController = require('./controllers/categoryController'),
     productController = require('./controllers/productController'),
-    accountController = require('./controllers/accountController'),
+    
     cartController = require('./controllers/cartController');
-
-var app = express();
+*/
+const app = express();
+const port = 3000;
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
-    layoutsDir: 'views/layouts/',
+    layoutsDir: 'views/_layouts/',
     helpers: {
         section: express_handlebars_sections(),
         number_format: n => {
@@ -79,13 +81,14 @@ app.get('/', (req, res) => {
 
 
 app.use('/home', homeController);
+app.use('/account', accountController);
+/*
 app.use('/category', categoryController);
 app.use('/product', productController);
-app.use('/account', accountController);
 app.use('/cart', restrict, cartController);
-
+*/
 app.use(handle404MDW);
 
-app.listen(3000, () => {
-    console.log('Site running on port 3000');
+app.listen(port, () => {
+    console.log('Site running on port' + port);
 });
