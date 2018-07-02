@@ -1,18 +1,18 @@
 {{#section 'title'}}
- Edit Category 
+ Edit brand 
 {{/section}} 
-{{#with Category}}
+{{#with brand}}
 <form action="" method="POST" role="form">
 	<div class="form-group">
 		<label for="">#</label>
-		<input type="text" class="form-control" id="" name="catId" value="{{catID}}" readonly>
+		<input type="text" class="form-control" id="" name="brandID" value="{{bra_id}}" readonly>
 	</div>
 	<div class="form-group">
-		<label for="">Category Name</label>
-		<input type="text" class="form-control" id="" name="catName" value="{{catName}}">
+		<label for="">brand name</label>
+		<input type="text" class="form-control" id="" name="bra_name" value="{{bra_name}}">
 	</div>
 
-	<a class="btn btn-default" href="/category" role="button">
+	<a class="btn btn-default" href="/brand" role="button">
 		<span class="glyphicon glyphicon-arrow-left"></span>
 		View List
 	</a>

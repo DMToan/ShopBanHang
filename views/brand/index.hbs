@@ -1,27 +1,27 @@
 {{#section 'title'}}
-	Categories 
+	brand
 {{/section}} 
 
 <table class="table table-hover">
 	<thead>
 		<tr>
 			<th class="col-md-1">ID</th>
-			<th>name</th>
-			<th>isService</th>
+			<th>name of brand</th>
+			<th>category</th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
-		{{#each categories}}
+		{{#each brand}}
 		<tr>
+			<td>{{bra_id}}</td>
+			<td>{{bra_name}}</td>
 			<td>{{catID}}</td>
-			<td>{{catName}}</td>
-			<td>{{isService}}</td>
 			<td class="text-right">
-				<a class="btn btn-danger btn-xs" href="/category/delete?id={{catID}}" role="button">
+				<a class="btn btn-danger btn-xs" href="/brand/delete?id={{bra_id}}" role="button">
 					<span class="glyphicon glyphicon-remove"></span>
 				</a>
-				<a class="btn btn-primary btn-xs" href="/category/edit?id={{catID}}" role="button">
+				<a class="btn btn-primary btn-xs" href="/brand/edit?id={{bra_id}}" role="button">
 					<span class="glyphicon glyphicon-wrench"></span>
 				</a>
 			</td>
@@ -29,7 +29,7 @@
 		{{/each}}
 	</tbody>
 </table>
-<a class="btn btn-large btn-block btn-primary" href="/category/add" role="button">
+<a class="btn btn-large btn-block btn-primary" href="/brand/add" role="button">
 	<span class="glyphicon glyphicon-plus"></span>
-	Thêm danh mục
+	Thêm nhãn hiệu
 </a>

@@ -1,14 +1,16 @@
 {{#section 'title'}} 
 	Dashboard - Users 
 {{/section}}
-{{#if layoutVM.curUser.isAdmin}}
+
 <table class="table table-hover">
 	<thead>
 		<tr>
 			<th class="col-md-1">username</th>
+			<th>password</th>
 			<th>Admin</th>
-			<th class="col-md-2">Tên</th>
-			<th>Giới</th>
+			<th>ngày mở</th>
+			<th class="col-md-2">họ tên</th>
+			<th>Giới tính</th>
 			<th>SĐT</th>
 			<th>Email</th>
 			<th>Địa chỉ</th>
@@ -19,11 +21,13 @@
 		{{#each users}}
 		<tr>
 			<td>{{username}}</td>
+			<td>{{password}}</td>
 			{{#if isAdmin}}
 			<td>yes</td>
 			{{else}}
 			<td>no</td>
 			{{/if}}
+			<td>{{opendate}}</td>
 			<td>{{fullname}}</td>
 			{{#if gender}}
 			<td>nam</td>
@@ -63,4 +67,3 @@
 		Cập nhật
 	</button>
 </form>
-{{/if}}

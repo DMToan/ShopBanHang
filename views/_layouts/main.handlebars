@@ -19,7 +19,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#" style="padding-top: 10px; padding-bottom: 10px;">
+		      <a class="navbar-brand" href="/home/index" style="padding-top: 10px; padding-bottom: 10px;">
 		      	<img src="/img/brand.png" alt="placeholder+image" style="width: 100px;">
 		      </a>
 		    </div>
@@ -27,8 +27,8 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">ABOUT</a></li>
+		        <li class="active"><a href="/home/index">HOME <span class="sr-only">(current)</span></a></li>
+		        <li><a href="home/about">ABOUT</a></li>
 		        <li><a href="#">PHONE</a></li>
 		        <li><a href="#">TABLET</a></li>
 		      </ul>
@@ -68,16 +68,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3 col-md-3 col-lg-3">
-				{{#if layoutVM.curUser.isAdmin}}
+				{{#if layoutVM.curUser.isadmin}}
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">Dashboard</h3>
 					</div>
 					<div class="list-group">
 						<a href="#" class="list-group-item">Product</a>
-						<a href="#" class="list-group-item">User</a>
-						<a href="#" class="list-group-item">Category</a>
-						<a href="#" class="list-group-item">Brand</a>
+						<a href="/account" class="list-group-item">User</a>
+						<a href="/category" class="list-group-item">Category</a>
+						<a href="/brand" class="list-group-item">Brand</a>
 						<a href="#" class="list-group-item">Cart</a>
 					</div>
 				</div>
