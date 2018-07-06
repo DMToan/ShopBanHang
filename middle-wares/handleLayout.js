@@ -1,5 +1,5 @@
 var categoryModel = require('../models/categoryModel');
-
+var brandModel = require('../models/brandModel')
 module.exports = (req, res, next) => {
 
 	if (req.session.isLogged === undefined) {

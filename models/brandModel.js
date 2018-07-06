@@ -5,6 +5,11 @@ exports.loadAll = () => {
     return db.load(sql);
 }
 
+exports.loadAllByCat = (catId, offset) => {
+    var sql = `select * from brand where CatID = ${catId} offset ${offset}`;
+    return database.load(sql);
+}
+
 exports.single = (id) => {
     return new Promise((resolve, reject) => {
         var sql = `select * from brand where bra_id = ${id}`;
@@ -21,7 +26,7 @@ exports.single = (id) => {
 }
 
 exports.add = (b) => {
-    var sql = `insert into brand(bra_name, catID) values('${b.bra_name}', '${b.category}')`;
+    var sql = `insert into brand(bra_id, bra_name, catID) values('${b.brandID}', '${b.bra_name}', '${b.category}')`;
     return db.save(sql);
 }
 

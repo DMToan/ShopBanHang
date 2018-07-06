@@ -27,10 +27,10 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="/home/index">HOME <span class="sr-only">(current)</span></a></li>
+		        <li class="active"><a href="/home">HOME <span class="sr-only">(current)</span></a></li>
 		        <li><a href="home/about">ABOUT</a></li>
-		        <li><a href="#">PHONE</a></li>
-		        <li><a href="#">TABLET</a></li>
+		        <li><a href="/product/byCat/1">PHONE</a></li>
+		        <li><a href="/product/byCat/2">TABLET</a></li>
 		      </ul>
 		      <form class="navbar-form navbar-left">
 		        <div class="form-group">
@@ -41,7 +41,7 @@
 		      <ul class="nav navbar-nav navbar-right">
 		      	{{#if layoutVM.isLogged}}
 		      	<form id="frmLogout" method="post" action="/account/logout"></form>
-		        <li><a href="#">
+		        <li><a href="/cart">
 		        	<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 		        </a></li>
 		        <li class="dropdown">
@@ -74,11 +74,11 @@
 						<h3 class="panel-title">Dashboard</h3>
 					</div>
 					<div class="list-group">
-						<a href="#" class="list-group-item">Product</a>
+						<a href="/product" class="list-group-item">Product</a>
 						<a href="/account" class="list-group-item">User</a>
 						<a href="/category" class="list-group-item">Category</a>
 						<a href="/brand" class="list-group-item">Brand</a>
-						<a href="#" class="list-group-item">Cart</a>
+						<a href="/cart" class="list-group-item">Cart</a>
 					</div>
 				</div>
 				{{else}}
@@ -87,11 +87,10 @@
 						<h3 class="panel-title">PHONE</h3>
 					</div>
 					<div class="list-group">
-						<a href="#" class="list-group-item">Apple</a>
-						<a href="#" class="list-group-item">Samsung</a>
-						<a href="#" class="list-group-item">OPPO</a>
-						<a href="#" class="list-group-item">Asus</a>
-						<a href="#" class="list-group-item">Tất cả</a>
+						<a href="/product/byBrand/0" class="list-group-item">Apple</a>
+						<a href="/product/byBrand/2" class="list-group-item">Samsung</a>
+						<a href="/product/byBrand/4" class="list-group-item">OPPO</a>
+						<a href="/product/byBrand/5" class="list-group-item">Asus</a>
 					</div>
 				</div>
 				<div class="panel panel-default">
@@ -99,11 +98,10 @@
 						<h3 class="panel-title">TABLET</h3>
 					</div>
 					<div class="list-group">
-						<a href="#" class="list-group-item">Apple</a>
-						<a href="#" class="list-group-item">Samsung</a>
-						<a href="#" class="list-group-item">Lenovo</a>
-						<a href="#" class="list-group-item">Mobell</a>
-						<a href="#" class="list-group-item">Tất cả</a>
+						<a href="/product/byBrand/1" class="list-group-item">Apple</a>
+						<a href="/product/byBrand/3" class="list-group-item">Samsung</a>
+						<a href="/product/byBrand/6" class="list-group-item">Lenovo</a>
+						<a href="/product/byBrand/7" class="list-group-item">Mobell</a>
 					</div>
 				</div>
 				{{/if}}

@@ -10,7 +10,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<form id="frmRemoveItem" method="post" action="/cart/remove">
-			<input id="txtProId_R" type="text" name="ProId">
+			<input id="txtProId_R" type="text" name="pro_id">
 		</form>
 		<table class="table table-hover">
 			<thead>
@@ -27,10 +27,10 @@
 				<tr>
 					<td>{{Product.pro_id}} - {{Productpro_name}}</td>
 					<td>{{number_format Product.pro_cost}}</td>
-					<td>{{Quantity}}</td>
+					<td>{{quantity}}</td>
 					<td>{{number_format Amount}}</td>
 					<td class="text-right">
-						<a data-proid="{{Product.pro_}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
+						<a data-proid="{{Product.pro_id}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
 							<span class="glyphicon glyphicon-remove"></span>
 						</a>
 					</td>
@@ -45,7 +45,7 @@
 						<h4>Total:</h4>
 					</td>
 					<td class="text-danger" colspan="2">
-						<h4>5,000,000</h4>
+						<h4>{{Amount}}</h4>
 					</td>
 				</tr>
 			</tfoot>

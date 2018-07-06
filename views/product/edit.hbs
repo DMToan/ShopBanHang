@@ -1,0 +1,80 @@
+{{#section 'title'}}
+ Edit product 
+{{/section}} 
+{{#with product}}
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="">#</label>
+		<input type="text" class="form-control" id="" name="pro_id" value="{{pro_id}}" readonly>
+	</div>
+	<div class="form-group">
+		<label for="">pro_name</label>
+		<input type="text" class="form-control" id="" name="pro_name" value="{{pro_name}}">
+	</div>
+	<div class="form-group">
+		<label for="">giá</label>
+		<input type="text" class="form-control" id="" name="pro_cost" value="{{pro_cost}}" >
+	</div>
+	<div class="form-group">
+		<label for="">thể loại</label>
+		<input type="text" class="form-control" id="" name="catID" value="{{catID}}">
+	</div>
+	<div class="form-group">
+		<label for="">ngày ra mắt</label>
+		<input type="text" class="form-control" id="" name="pro_date" value="{{pro_date}}">
+	</div>
+	<div class="form-group">
+		<label for="">màn hình</label>
+		<input type="text" class="form-control" id="" name="ManHinh" value="{{ManHinh}}">
+	</div>
+	<div class="form-group">
+		<label for="">hệ điều hành</label>
+		<input type="text" class="form-control" id="" name="HDH" value="{{HDH}}">
+	</div>
+	<div class="form-group">
+		<label for="">camera trước</label>
+		<input type="text" class="form-control" id="" name="Cam_tr" value="{{Cam_tr}}">
+	</div>
+	<div class="form-group">
+		<label for="">camera sau</label>
+		<input type="text" class="form-control" id="" name="Cam_s" value="{{Cam_s}}">
+	</div>
+	<div class="form-group">
+		<label for="">CPU</label>
+		<input type="text" class="form-control" id="" name="CPU" value="{{CPU}}">
+	</div>
+	<div class="form-group">
+		<label for="">Ram</label>
+		<input type="text" class="form-control" id="" name="Ram" value="{{Ram}}">
+	</div>
+	<div class="form-group">
+		<label for="">bộ nhớ trong</label>
+		<input type="text" class="form-control" id="" name="Menory" value="{{Memory}}">
+	</div>
+	<div class="form-group">
+		<label for=""> thẻ sim</label>
+		<input type="text" class="form-control" id="" name="Sim" value="{{Sim}}">
+	</div>
+	<div class="form-group">
+		<label for="">dung lượng pin</label>
+		<input type="text" class="form-control" id="" name="Pin" value="{{Pin}}">
+	</div>
+	<div class="form-group">
+		<label for="">nhãn hiệu</label>
+		<input type="text" class="form-control" id="" name="bra_id" value="{{bra_id}}">
+	</div>
+	<div class="form-group">
+		<label for="">số lượng</label>
+		<input type="text" class="form-control" id="" name="quantity" value="{{quantity}}">
+	</div>
+
+	<a class="btn btn-default" href="/product" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		View List
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-save"></span>
+		Update
+	</button>
+</form>
+{{/with}}

@@ -15,11 +15,10 @@ var handleLayoutMDW = require('./middle-wares/handleLayout'),
 var homeController = require('./controllers/homeController'),
     accountController = require('./controllers/accountController'),
     categoryController = require('./controllers/categoryController'),
-    brandController = require('./controllers/brandController');
-/*    productController = require('./controllers/productController'),
-    
+    brandController = require('./controllers/brandController'),
+    productController = require('./controllers/productController'),    
     cartController = require('./controllers/cartController');
-*/
+
 const app = express();
 const port = 3000;
 
@@ -85,10 +84,9 @@ app.use('/home', homeController);
 app.use('/account', accountController);
 app.use('/category', categoryController);
 app.use('/brand', brandController);
-/*
 app.use('/product', productController);
 app.use('/cart', restrict, cartController);
-*/
+
 app.use(handle404MDW);
 
 app.listen(port, () => {

@@ -1,0 +1,158 @@
+{{#section 'title'}}
+ Add product 
+{{/section}} 
+
+{{#section 'css'}}
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+{{/section}}
+{{#section 'js'}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+        $(document).ready(function () {
+            var date_input = $('input[name="date"]');
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            })
+        })
+    </script>
+{{/section}}
+
+{{#if showAlert}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	product added.
+</div>
+{{/if}}
+
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="">ID sản phẩm</label>
+		<input type="text" class="form-control" id="" name="pro_id" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">Tên sản phẩm</label>
+		<input type="text" class="form-control" id="" name="pro_name" placeholder="tên sản phẩm">
+	</div>
+	<div class="form-group">
+		<label for="">giá</label>
+		<input type="text" class="form-control" id="" name="pro_cost" placeholder="vnđ">
+	</div>
+	<div class="form-group">
+        <label for="" class="col-sm-12 control-label">thể loại</label>
+        <div class="col-sm-12" data-toggle="button">
+            <label class="radio-inline">
+                <input type="radio" name="catID" value="1" checked>phone</label>
+            <label class="radio-inline">
+                <input type="radio" name="catID" value="2">tablet</label>
+        </div>
+    </div>
+    <br/>
+	<div class="form-group">
+		<label for="" >Ngày ra mắt
+            <span>*</span>
+        </label>
+        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+        <div class="bootstrap-iso">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group ">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar">
+                                </i>
+                            </div>
+                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+	</div>
+	<div class="form-group">
+		<label for="">màn hình</label>
+		<input type="text" class="form-control" id="" name="ManHinh" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">hệ điều hành</label>
+		<input type="text" class="form-control" id="" name="HDH" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">camera trước</label>
+		<input type="text" class="form-control" id="" name="cam_tr" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">camera sau</label>
+		<input type="text" class="form-control" id="" name="cam_sau" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">CPU</label>
+		<input type="text" class="form-control" id="" name="CPU" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">Ram</label>
+		<input type="text" class="form-control" id="" name="Ram" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">bộ nhớ trong</label>
+		<input type="text" class="form-control" id="" name="Memory" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">thẻ nhớ</label>
+		<input type="text" class="form-control" id="" name="Sim" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">dung lượng pin</label>
+		<input type="text" class="form-control" id="" name="Pin" placeholder="">
+	</div>
+	<div class="form-group">
+		<label for="">nhãn hiệu</label>
+		<div class="form-group">
+	        <label for="" class="col-sm-12 "> phone</label>
+	        <div class="col-sm-12" data-toggle="button">
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="0" checked>Apple</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="2">Samsung</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="4" checked>OPPO</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="5">Asus</label>
+	        </div>
+	    </div>
+	    <div class="form-group">
+	        <label for="" class="col-sm-12 "> tablet</label>
+	        <div class="col-sm-12" data-toggle="button">
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="1" checked>Apple</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="3">Samsung</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="6" checked>Lenovo</label>
+	            <label class="radio-inline">
+	                <input type="radio" name="bra_id" value="7">Mobell</label>
+	        </div>
+	    </div>
+	</div>
+	<div class="form-group">
+		<label for="">số lượng</label>
+		<input type="text" class="form-control" id="" name="quantity" placeholder="">
+	</div>
+	<a class="btn btn-default" href="/product" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		View list
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-check"></span>
+		Save
+	</button>
+</form>

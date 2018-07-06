@@ -1,7 +1,7 @@
 {{#section 'title'}}
  Dashboard - Products 
 {{/section}} 
-{{#if layoutVM.curUser.isAdmin}}
+
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -11,6 +11,9 @@
 			<th>Hiệu</th>
 			<th>Chi tiết</th>
 			<th>Giá</th>
+			<th>ngày ra mắt</th>
+			<th>lượt mua</th>
+			<th>lượt xem</th>
 			<th>Còn</th>
 			<th class="col-md-1">&nbsp;</th>
 		</tr>
@@ -22,9 +25,22 @@
 			<td>{{pro_name}}</td>
 			<td>{{catID}}</td>
 			<td>{{bra_id}}</td>
-			<td>{{proDetail}}</td>
+			<td><ul>
+				<li>màn hình: {{ManHinh}}</li>
+				<li>hệ điều hành: {{HDH}}</li>
+				<li>camera trước: {{Cam_tr}}</li>
+				<li>camera sau: {{Cam_s}}</li>
+				<li>CPU: {{CPU}}</li>
+				<li>Ram: {{Ram}}</li>
+				<li>bộ nhớ trong: {{Memory}}</li>
+				<li>thẻ nhớ: {{Sim}}</li>
+				<li>dung lượng pin: {{Pin}}</li>
+			</ul></td>
 			<td>{{pro_cost}}</td>
-			<td>{{proQuantity}}</td>
+			<td>{{pro_date}}</td>
+			<td>{{pro_sell}}</td>
+			<td>{{Pro_view}}</td>
+			<td>{{quantity}}</td>
 			<td class="text-right">
 				<a class="btn btn-danger btn-xs" href="/product/delete?id={{pro_id}}" role="button">
 					<span class="glyphicon glyphicon-remove"></span>
@@ -37,8 +53,7 @@
 		{{/each}}
 	</tbody>
 </table>
-<a class="btn btn-large btn-block btn-primary" href="#" role="button">
+<a class="btn btn-large btn-block btn-primary" href="/product/add" role="button">
 	<span class="glyphicon glyphicon-plus"></span>
 	Thêm sản phẩm mới
 </a>
-{{/if}}
